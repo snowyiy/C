@@ -23,12 +23,12 @@ int main() {
 
     // store the size of message into size
     int size = strlen(message);
-    printf("size fo message : %d\n", size);
+    printf("size of message : %d\n", size);
 
     // print the message
-    for (int i = 0; i < size; i++) {
+    for (int i = 0; i < size; i++)
         printf("%c", message[i]);
-    }
+    
     printf("\n");
 
     char ** message_morse = malloc(size * sizeof(char));
@@ -36,21 +36,25 @@ int main() {
     // translate message
     for (int i = 0; i < size; i++) {
         int j = 0;
-        while (message[i] != morse[j].letter && j < ARRAY_SIZE(morse) + 1) {
+        while (message[i] != morse[j].letter && j < ARRAY_SIZE(morse) + 1)
             j++;
-        }
-        message_morse[i] = morse[j].code_letter;
-    }
-
-    // print the coded message
-    for (int i = 0; i < size; i++) {
-        printf("%s ", message_morse[i]);
+        //message_morse[i] = morse[j].code_letter;
+    	
+	int code_letter_size = strlen(morse[j].code_letter);
+	for (int h = 0; h < code_letter_size; h++) {
+	    if (morse[j].code_letter[h] == '1')
+		// dot
+		printf("- ");
+	    else
+		// dash
+		printf("--- ");
+	}
+	// space beetween letters 
+	printf("   ");
     }
     printf("\n");
 
-    int k = 7;
-    printf("%c", k);
-
+    
     free(message);
     free(message_morse);
 
