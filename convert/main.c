@@ -13,7 +13,8 @@ int powi(int a, int b) {
 }
 
 
-int BinaryToDecimal(int binary) {
+// convert binary into decimal
+int decimal(int binary) {
     int decimal;
 
     for (int i = 0; i < 8; i++) {
@@ -32,8 +33,7 @@ int BinaryToDecimal(int binary) {
 int main() {
     int binary_to_convert = 11111111;
 
-    //convert binary_to_convert
-    int result_decimal = BinaryToDecimal(binary_to_convert);
+    int result_decimal = decimal(binary_to_convert);
     printf("%d\n", result_decimal);
 
     return 0;
