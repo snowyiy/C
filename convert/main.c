@@ -3,7 +3,6 @@
 #include <math.h>
 
 
-
 int powi(int a, int b) {
     int r = 1;
     for (int i = 0; i < b; i++) {
@@ -31,7 +30,7 @@ int decimal(int binary) {
 
 
 int main() {
-    int binary_to_convert = 11111111;
+    int binary_to_convert;
 
     int result_decimal = decimal(binary_to_convert);
     printf("%d\n", result_decimal);
