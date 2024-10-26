@@ -2,7 +2,7 @@
 
 #define ARRAY_SIZE(x) (sizeof(x) / sizeof(x[0]))
 
-void sort(/*int list_input[]*/) {
+void sort() {
     int list_input[5] = {1, 8, 5, 12, 3};
     int len_list_input = ARRAY_SIZE(list_input);
     int list_output[len_list_input];
@@ -12,15 +12,12 @@ void sort(/*int list_input[]*/) {
         int min = list_input[0];
 
         for (int j = 1; j < len_list_input; j++) {
-            //printf("min : %d > list_input[%d] : %d\n", min, j, list_input[j]);
             if (min > list_input[j]) {
-                //printf("if true\n");
                 min = list_input[j];
                 rang_min = j;
             }
         }
 
-        //printf("min : %d | rang_min : %d\n", min, rang_min);
         list_output[i] = min;
         list_input[rang_min] = 1000000;
     }
@@ -36,7 +33,7 @@ void sort(/*int list_input[]*/) {
 int main() {
     int list[5] = {1, 8, 5, 12, 3};
 
-    sort(/*list*/);
+    sort();
 
 
     return 0;
