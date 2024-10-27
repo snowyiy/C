@@ -34,7 +34,7 @@ int main() {
     char matrix[lines][columns];
     for (int i = 0; i < lines; i++) {
         for (int j = 0; j < columns; j++) {
-            matrix[i][j] = 0;
+            matrix[i][j] = dead;
         }
     }
  
