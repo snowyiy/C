@@ -5,7 +5,6 @@
 #include "powi.h"
 
 
-
 // convert binary into decimal
 int decimal(int binary) {
     int decimal;
