@@ -2,6 +2,7 @@
     "files.associations": {
         "system_error": "c",
         "stdio.h": "c",
-        "numeric": "c"
+        "numeric": "c",
+        "powi.h": "c"
     }
 }

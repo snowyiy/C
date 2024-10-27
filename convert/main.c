@@ -3,7 +3,7 @@
 #include <math.h>
 #include <string.h>
 
-#include "powi.h"
+#include "/home/eneko/Documents/C/libs/powi.h"
 
 
 // convert binary into decimal

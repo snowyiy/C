@@ -1,4 +1,4 @@
-#include "powi.h"
+#include "/home/eneko/Documents/C/libs/powi.h"
 
 // this function returns a to the power of b
 int powi(int a, int b) {
