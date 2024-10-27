@@ -1,4 +1,4 @@
 CC = gcc
 
 all:
-	${CC} main.c -o main
+	${CC} -o main main.c powi.c
