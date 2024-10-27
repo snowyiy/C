@@ -6,7 +6,7 @@
 
 
 // convert binary into decimal
-int decimal(int binary) {
+int binaryToDecimal(int binary) {
     int decimal;
 
     for (int i = 0; i < 8; i++) {
@@ -22,11 +22,31 @@ int decimal(int binary) {
 }
 
 
+// convert decimal into binary
+int decimalToBinary(int decimal) {
+    int binary = 0;
+    // int power = 1;
+
+    for (int i = 0; i < 8; i++) {
+        binary += (decimal % 2) * powi(10, i);   // * power;
+        decimal = floor(decimal / 2);
+        // power *= 10;
+    }
+
+    return binary;
+}
+
+
 int main() {
     int binary_to_convert = 11111111;
+    int decimal_to_convert = 255;
 
-    int result_decimal = decimal(binary_to_convert);
+
+    int result_decimal = binaryToDecimal(binary_to_convert);
     printf("%d\n", result_decimal);
+
+    int result_binary = decimalToBinary(decimal_to_convert);
+    printf("%d\n", result_binary);
 
     return 0;
 }
