@@ -3,6 +3,7 @@
         "system_error": "c",
         "stdio.h": "c",
         "numeric": "c",
-        "powi.h": "c"
+        "powi.h": "c",
+        "ostream": "c"
     }
 }
