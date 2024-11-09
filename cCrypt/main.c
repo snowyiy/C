@@ -4,6 +4,8 @@
 
 #define BUFFER 2048
 
+// TODO - séparer le code en fonction et en ajouter une pour décoder un fichier
+
 int main(int argc, char * argv[]) {
 
     char * file_path = malloc(BUFFER);
