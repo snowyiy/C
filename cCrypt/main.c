@@ -4,10 +4,11 @@
 
 #define BUFFER 2048
 
-int main() {
+int main(int argc, char * argv[]) {
+
     char * file_path = malloc(BUFFER);
-    printf("enter the path of the file to crypt :\n");
-    scanf("%s", file_path);
+    strcpy(file_path, argv[1]);
+    //printf("%s\n", file_path);
 
     // get the name of the chosen file
     int h = strlen(file_path) - 1;
@@ -15,14 +16,17 @@ int main() {
         h--;
     } h++;
 
-    char * file_name = malloc(strlen(file_path - h));
+    int file_name_size = strlen(file_path - h);
+    char * file_name = malloc(file_name_size);
     for (int i = h; i < strlen(file_path); i++) {
         file_name[i - h] = file_path[i];
     }
 
     // set the name of the crypted file
-    char * crypt_file = "crypt-";   //!
-    printf("crypted : %s\n", crypt_file);
+    char * crypt_file_name = malloc(file_name_size + 6);
+    strcpy(crypt_file_name, "crypt-");
+    strcpy(&crypt_file_name[6], file_name);
+    //printf("crypted : %s\n", crypt_file_name);
 
     FILE *file;
     file = fopen(file_path, "r+");
@@ -31,24 +35,41 @@ int main() {
     if(file == NULL) { printf("ERROR ! the given file does not exist\n"); return 1; }
 
     
-    char * file_content = malloc(BUFFER);
+    char * current_line = malloc(BUFFER);
+    int * crypt_current_line = malloc(BUFFER);
+    int crypt_file_content[BUFFER];
 
-    while (fgets(file_content, BUFFER, file)) {
-        printf("%d\n", strlen(file_content));
+    int j = 0;
+    while (fgets(current_line, BUFFER, file)) {
+        //printf("%d\n", strlen(current_line));
+        for (int i = 0; i < strlen(current_line); i++) {
+            if (current_line[i] == '\n') { crypt_current_line[i] = current_line[i]; }  
+            else { crypt_current_line[i] = current_line[i]; }
+            //printf("%d\n", current_line[i]);
+        }
 
+        crypt_file_content[j] = *crypt_current_line;
 
-
+        j++;
     }
-
-
-
-    //int asciiValue = (int)ch;
 
     fclose(file);
 
+
+    // write content to the crypt file
+    FILE *crypt_file;
+    crypt_file = fopen(crypt_file_name, "w+");
+
+    fprintf(crypt_file, "%d", crypt_file_content);
+
+    fclose(crypt_file);
+
+
     free(file_path);
     free(file_name);
-    free(file_content);
+    free(crypt_file_name);
+    free(current_line);
+    free(crypt_current_line);
 
     return 0;
 }
