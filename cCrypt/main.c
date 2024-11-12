@@ -34,35 +34,44 @@ int main(int argc, char * argv[]) {
     file = fopen(file_path, "r+");
 
     // print an error if the file does not exist
-    if(file == NULL) { printf("ERROR ! the given file does not exist\n"); return 1; }
+    if (file == NULL) { printf("ERROR ! the given file does not exist\n"); return 1; }
 
     
     char * current_line = malloc(BUFFER);
     int * crypt_current_line = malloc(BUFFER);
     int crypt_file_content[BUFFER];
 
+    FILE *crypt_file;
+    crypt_file = fopen(crypt_file_name, "w");
+
+    fclose(crypt_file);
+
+
+    crypt_file = fopen(crypt_file_name, "ab");
+
     int j = 0;
     while (fgets(current_line, BUFFER, file)) {
-        //printf("%d\n", strlen(current_line));
-        for (int i = 0; i < strlen(current_line); i++) {
-            if (current_line[i] == '\n') { crypt_current_line[i] = current_line[i]; }  
-            else { crypt_current_line[i] = current_line[i]; }
-            //printf("%d\n", current_line[i]);
-        }
+        // //printf("%d\n", strlen(current_line));
+        // for (int i = 0; i < strlen(current_line); i++) {
+        //     if (current_line[i] == '\n') { crypt_current_line[i] = current_line[i]; }  
+        //     else { crypt_current_line[i] = current_line[i]; }
+        //     //printf("%d\n", current_line[i]);
+        // }
 
-        crypt_file_content[j] = *crypt_current_line;
+        // crypt_file_content[j] = *crypt_current_line;
 
-        j++;
+        // j++;
+        fprintf(crypt_file, "%d", current_line);
     }
 
     fclose(file);
 
 
-    // write content to the crypt file
-    FILE *crypt_file;
-    crypt_file = fopen(crypt_file_name, "w+");
+    // // write content to the crypt file
+    // FILE *crypt_file;
+    // crypt_file = fopen(crypt_file_name, "wb");
 
-    fprintf(crypt_file, "%d", crypt_file_content);
+    //fprintf(crypt_file, "%d", file_content);
 
     fclose(crypt_file);
 
