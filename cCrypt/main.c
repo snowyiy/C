@@ -58,7 +58,13 @@ int main(int argc, char * argv[]) {
         //     //printf("%d\n", current_line[i]);
         // }
 
+<<<<<<< HEAD
         // crypt_file_content[j] = *crypt_current_line;
+=======
+        //for (int h = 0; h < BUFFER; h++)
+            *(crypt_file_content + j) = crypt_current_line;
+            //crypt_file_content[j] = crypt_current_line[h];
+>>>>>>> refs/remotes/origin/dev
 
         // j++;
         fprintf(crypt_file, "%d", current_line);
