@@ -1,28 +1,28 @@
-## Here are some of my little C projects
+# Here are some of my little C projects
 
-# Finished :
-[Meson Tests](Meson_Tests/)
+## Finished :
+* [**Meson Tests**](Meson_Tests/)
 
-[morse_mode](morse_code/)
+* [**morse_mode**](morse_code/)
 
-[sort_list](sort_list/)
+* [**sort_list**](sort_list/)
 
-[thread](thread/)
+* [**thread**](thread/)
 
-[libs](libs/)
+* [**libs**](libs/)
 
-[WhileTurtle](WhileTurtle/)
+* [**WhileTurtle**](WhileTurtle/)
 
-[convert](convert/)
+* [**convert**](convert/)
+* 
 
+## Not finished (probably never) :
+* [**GUI**](GUI/)
 
-# Not finished (probably never) :
-[GUI](GUI/)
+* [**cCrypt**](cCrypt/)
 
-[cCrypt](cCrypt/)
+* [**file_format**](file_format/)
 
-[file_format](file_format/)
+* [**jeu de la vie (game of life)**](jeu_de_la_vie/)
 
-[jeu de la vie (game of life)](jeu_de_la_vie/)
-
-[leet_code](leet_code/)
+* [**leet_code**](leet_code/)
