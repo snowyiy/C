@@ -3,7 +3,15 @@
 #include <string.h>
 #include <ctype.h>
 
+// TODO: ability to translate a txt file
 #define BUFFER 256
+
+struct LeetCode {
+    char letter;
+    char leet;
+};
+struct LeetCode LeetCode[4] = {{'a', '4'}, {'e', '3'}, {'i', '1'}, {'o', '0'}};
+
 
 void encodeLeet(char * text) {
     char * lowercase_text = malloc(BUFFER);
@@ -11,21 +19,9 @@ void encodeLeet(char * text) {
         lowercase_text[i] = tolower(text[i]);
 
     for (int i = 0; i < strlen(text); i++) {
-        switch (lowercase_text[i]) {
-            case 'a':
-                text[i] = '4';
-                break;
-            case 'e':
-                text[i] = '3';
-                break;
-            case 'o':
-                text[i] = '0';
-                break;
-            case 'i':
-                text[i] = '1';
-                break;
-            defalut:
-                break;
+        for (int j = 0; j < 4; j++) {
+            if (lowercase_text[i] == LeetCode[j].letter)
+                text[i] = LeetCode[j].leet;
         }
     }
 
