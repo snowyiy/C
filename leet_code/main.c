@@ -3,7 +3,8 @@
 #include <string.h>
 #include <ctype.h>
 
-// TODO: ability to translate a txt file
+//TODO ability to encode txt file
+
 #define BUFFER 256
 
 struct LeetCode {
